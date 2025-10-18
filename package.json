@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/server.ts",
+    "dev": "nodemon ./src/app.ts",
     "build": "tsc",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
@@ -14,10 +14,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.38.0",
+    "@types/cors": "^2.8.19",
     "@types/eslint__js": "^8.42.3",
     "@types/express": "^5.0.3",
     "@types/jest": "^30.0.0",

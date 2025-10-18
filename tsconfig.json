@@ -4,7 +4,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "lib": ["ESNext"],
-    "module": "CommonJS",        // <-- CommonJS вместо NodeNext
+    "module": "CommonJS",       
     "moduleResolution": "node",
     "noImplicitOverride": true,
     "noUncheckedIndexedAccess": true,

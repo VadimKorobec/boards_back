@@ -1,5 +1,16 @@
 import express, { Application, NextFunction, Request, Response } from 'express';
+import mongoose from 'mongoose';
+
+const DB_HOST =
+  'mongodb+srv://Vadim:3sflctqdmSmgBtDP@cluster0.jdu7ybz.mongodb.net/boards_reader?retryWrites=true&w=majority&appName=Cluster0';
 import cors from 'cors';
+
+mongoose
+  .connect(DB_HOST)
+  .then(() => {
+    console.log('Database connect success');
+  })
+  .catch((error) => console.log(error.message));
 
 import boardsRouter from './routes/api/boards';
 

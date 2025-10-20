@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
+
 import HttpError from '../helpers/HttpError';
 
 export const getAll = async (
@@ -47,7 +48,7 @@ export const updateById = async (
 ) => {
   try {
     const { id } = req.params;
-    const result = await books.updateById(id, req.body);
+    const result = await boards.updateById(id, req.body);
     if (!result) {
       throw HttpError(404, 'Not found');
     }
@@ -75,3 +76,5 @@ export const deleteById = async (
     next(error);
   }
 };
+
+// 3sflctqdmSmgBtDP

@@ -1,16 +1,6 @@
 import express, { Application, NextFunction, Request, Response } from 'express';
-import mongoose from 'mongoose';
 
-const DB_HOST =
-  'mongodb+srv://Vadim:3sflctqdmSmgBtDP@cluster0.jdu7ybz.mongodb.net/boards_reader?retryWrites=true&w=majority&appName=Cluster0';
 import cors from 'cors';
-
-mongoose
-  .connect(DB_HOST)
-  .then(() => {
-    console.log('Database connect success');
-  })
-  .catch((error) => console.log(error.message));
 
 import boardsRouter from './routes/api/boards';
 
@@ -19,7 +9,6 @@ interface AppError extends Error {
 }
 
 const app: Application = express();
-const PORT: number = 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -35,6 +24,4 @@ app.use((err: AppError, req: Request, res: Response, next: NextFunction) => {
   res.status(status).json({ message });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on ${PORT}...`);
-});
+export default app;

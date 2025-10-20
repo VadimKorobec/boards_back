@@ -2,11 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 
 import HttpError from '../helpers/HttpError';
 
-export const getAll = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+export const getAll = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const result = await boards.getAll();
     res.json(result);
@@ -15,11 +11,7 @@ export const getAll = async (
   }
 };
 
-export const getById = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+export const getById = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { id } = req.params;
     const result = await boards.getById(id);
@@ -41,11 +33,7 @@ export const add = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
-export const updateById = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+export const updateById = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { id } = req.params;
     const result = await boards.updateById(id, req.body);
@@ -58,11 +46,7 @@ export const updateById = async (
   }
 };
 
-export const deleteById = async (
-  req: Request,
-  res: Response,
-  next: NextFunction,
-) => {
+export const deleteById = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { id } = req.params;
     const result = await boards.deleteById(id);

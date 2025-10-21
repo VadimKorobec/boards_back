@@ -19,11 +19,13 @@ export default [
       prettier: eslintPluginPrettier,
     },
     rules: {
-      'no-unused-vars': 'error',
       'no-undef': 'off',
       'prefer-const': 'error',
-      'no-console': 'warn',
       'no-debugger': 'warn',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_' },
+      ],
       'prettier/prettier': [
         'error',
         {

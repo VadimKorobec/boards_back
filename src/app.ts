@@ -21,7 +21,7 @@ app.use((req: Request, res: Response) => {
   res.status(404).json({ message: 'Not found' });
 });
 
-app.use((err: AppError, req: Request, res: Response, next: NextFunction) => {
+app.use((err: AppError, req: Request, res: Response, _next: NextFunction) => {
   const { status = 500, message = 'Server error' } = err;
   res.status(status).json({ message });
 });

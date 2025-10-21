@@ -1,12 +1,14 @@
 import express, { Application, NextFunction, Request, Response } from 'express';
-
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 import boardsRouter from './routes/api/boards';
 
 interface AppError extends Error {
   status?: number;
 }
+
+dotenv.config();
 
 const app: Application = express();
 

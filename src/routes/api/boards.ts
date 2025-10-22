@@ -8,12 +8,12 @@ const router: Router = express.Router();
 
 router.get('/', getAll);
 
-router.get('/:id', getById);
+// router.get('/:id', getById);
 
-router.post('/', validateBody(boardsSchema), add);
+// router.post('/', validateBody(boardsSchema), add);
 
-router.put('/:id', validateBody(boardsSchema), updateById);
+// router.put('/:id', validateBody(boardsSchema), updateById);
 
-router.delete('/:id', deleteById);
+// router.delete('/:id', deleteById);
 
 export default router;

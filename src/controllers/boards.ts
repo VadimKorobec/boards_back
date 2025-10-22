@@ -3,7 +3,11 @@ import Board from '../models/board';
 
 // import HttpError from '../helpers/HttpError';
 
-export const getAll = async (req: Request, res: Response, next: NextFunction) => {
+export const getAll = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   try {
     const result = await Board.find();
     res.json(result);
@@ -25,14 +29,14 @@ export const getAll = async (req: Request, res: Response, next: NextFunction) =>
 //   }
 // };
 
-// export const add = async (req: Request, res: Response, next: NextFunction) => {
-//   try {
-//     const result = await boards.add(req.body);
-//     res.status(201).json(result);
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+export const add = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const result = await Board.create(req.body);
+    res.status(201).json(result);
+  } catch (error) {
+    next(error);
+  }
+};
 
 // export const updateById = async (req: Request, res: Response, next: NextFunction) => {
 //   try {

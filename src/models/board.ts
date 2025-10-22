@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import taskSchema from '../schemas/task';
+import taskSchema from './task';
 
 const boardSchema = new Schema({
   title: String,
